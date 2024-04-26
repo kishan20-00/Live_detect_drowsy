@@ -1,22 +1,23 @@
 const router = require("express").Router();
 
-const {addNewCloth,viewCloths,viewOneCloth, updateCloth,deleteCloth} = require ('../controllers/clothController.js')
+const {addNewNotify,viewNotify,viewOneNotify, updateNotify,deleteNotify, viewNotifyByName} = require ('../controllers/notifyController.js')
 
 //add new Hotel 
-router.post("/add", addNewCloth);
+router.post("/add", addNewNotify);
 
 //view all Hotels
-router.get("/", viewCloths);
+router.get("/", viewNotify);
 
 //update existing Hotel
- router.put("/update/:id",updateCloth);
+ router.put("/update/:id",updateNotify);
 
 //delete existing one
- router.delete("/delete/:id",deleteCloth);
+ router.delete("/delete/:id",deleteNotify);
 
 //view one Hotel
-router.get("/get/:id", viewOneCloth);
+router.get("/get/:id", viewOneNotify);
 
-
+//view one Hotel
+router.get("/getname/:nameid", viewNotifyByName);
 
 module.exports = router;

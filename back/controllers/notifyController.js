@@ -5,10 +5,12 @@ exports.addNewNotify= async (req, res) => {
  
     //constant variables for the attributes
     const {
+      UserName,
         Status
     }= req.body;
   
           const newNotify = new notifyDetails({
+            UserName,
             Status
         })
     
@@ -25,10 +27,10 @@ exports.addNewNotify= async (req, res) => {
     };
 
 //delete existing one
-exports.deleteCloth = async (req, res) => {
-    let clothID = req.params.id;
+exports.deleteNotify = async (req, res) => {
+    let notifyID = req.params.id;
    
-    await clothDetails.findByIdAndDelete(clothID).then(() => {
+    await notifyDetails.findByIdAndDelete(notifyID).then(() => {
       res.status(200).json({ status: "Deleted Successfully" });
     }).catch((error) => {
       res.status(500).json({ status: "Error with Deleting", error: error.message });
@@ -36,40 +38,34 @@ exports.deleteCloth = async (req, res) => {
   }
    
  //update 
- exports.updateCloth= async (req, res) => { 
+ exports.updateNotify= async (req, res) => { 
     //fetch id from url
     let id = req.params.id;
     const {
-        Username,
-        ClothName,
-        ClothImage,
-        WearType,
-        Casualty
+      UserName,
+            Status
            } = req.body;
   
-    const updateCloth = {
-        Username,
-        ClothName,
-        ClothImage,
-        WearType,
-        Casualty
+    const updateNotify = {
+      UserName,
+      Status
         }
   
   
-    const update = await clothDetails.findByIdAndUpdate(id, updateCloth).then(() => {
-      res.status(200).send({status: "Cloth updated"})
+    const update = await notifyDetails.findByIdAndUpdate(id, updateNotify).then(() => {
+      res.status(200).send({status: "Notify updated"})
     }).catch((err) => {
        
-        res.status(500).send({status: "Error with updating Cloth", error: err.message});
+        res.status(500).send({status: "Error with updating Notify", error: err.message});
     })   
   }
 
 //view 
-exports.viewCloths= async (req, res) => { 
+exports.viewNotify= async (req, res) => { 
  
     //calling  model
-    clothDetails.find().then((cloths) => {
-      res.json(cloths)
+    notifyDetails.find().then((notifies) => {
+      res.json(notifies)
   
   }).catch((err) => {
      
@@ -77,28 +73,24 @@ exports.viewCloths= async (req, res) => {
   
   }
   //view one
-  exports.viewOneCloth = async (req, res) => {
+  exports.viewOneNotify = async (req, res) => {
     
-    let clothNumber = req.params.id;
-    const cloth = await clothDetails.findById(clothNumber).then((cloth) => {
-        res.status(200).send({status: "fetched", cloth})
+    let notifyNumber = req.params.id;
+    const notify = await notifyDetails.findById(notifyNumber).then((notify) => {
+        res.status(200).send({status: "fetched", notify})
     }).catch(() => {
         
          res.status(500).send({status:"Error with get " , error: err.message})
     })
   }
 
-exports.viewOneClothName = async (req, res) => {
-    const clothName = req.params.name; // Assuming the name is passed as a parameter
-
-    try {
-        const cloth = await clothDetails.findOne({ name: clothName });
-        if (cloth) {
-            res.status(200).json({ status: "success", cloth });
-        } else {
-            res.status(404).json({ status: "error", message: "Cloth not found" });
-        }
-    } catch (error) {
-        res.status(500).json({ status: "error", message: error.message });
-    }
-};
+//view one
+exports.viewNotifyByName = async (req, res) => {
+    
+  let nameid = req.params.UserName;
+  const notify = await notifyDetails.find(nameid).then((notify) => {
+      res.status(200).send({status: "  fetched", notify})
+  }).catch(() => {
+       res.status(500).send({status:"Error with get " , error: err.message})
+  })
+}

@@ -4,9 +4,11 @@ const Schema = mongoose.Schema;
 
 const NotifySchema = new Schema({
 
+  UserName: {
+    type: String,
+  },
   Status :{
     type: String,
-    require: true
 },
 
 },{ timestamps: true });
