@@ -1,8 +1,8 @@
 import React from 'react';
-import { Carousel,Container,Row,Col} from "react-bootstrap";
+import { Carousel,Container} from "react-bootstrap";
 import UserSideBar from './UserSideBar';
 import Header from './header';
-import { FaUser, FaMedal, FaComment, FaChartBar,FaUserPlus,FaUsers,FaSignOutAlt,FaHome } from 'react-icons/fa';
+
 
 function UserDashboard(){
     return (

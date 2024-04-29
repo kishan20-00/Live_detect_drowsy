@@ -1,13 +1,10 @@
-
-
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaUser, FaMedal, FaChartBar,FaUserPlus,FaUsers,FaSignOutAlt,FaHome, FaComment } from 'react-icons/fa';
+import { FaUser, FaMedal, FaChartBar,FaSignOutAlt,FaHome, FaComment } from 'react-icons/fa';
 
 
 function TeacherSidebar() {
-    const serviceId = localStorage.getItem("email");
-
+   
     const handleLogout = () => {
         // Clear any user-related session data (e.g., tokens, user info)
         localStorage.removeItem('email'); // Assuming 'email' is used for session management

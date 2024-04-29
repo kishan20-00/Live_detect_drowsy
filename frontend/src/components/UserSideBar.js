@@ -1,8 +1,6 @@
-
-
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaUser, FaMedal, FaChartBar,FaUserPlus,FaUsers,FaSignOutAlt,FaHome, FaComment } from 'react-icons/fa';
+import { FaUser, FaMedal, FaChartBar,FaSignOutAlt,FaHome, FaComment } from 'react-icons/fa';
 
 
 function UserSideBar() {

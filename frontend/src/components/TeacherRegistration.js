@@ -1,15 +1,14 @@
 import {React, useState }from "react";
-import {Form, Button, Card,Image} from 'react-bootstrap';
+import {Form, Button,Image} from 'react-bootstrap';
 import {Link} from 'react-router-dom'
 import axios from 'axios'
 export default function TeacherRegistration(){
     // Creating states
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [Teacher, setTeacher] = useState("");
     const [userName, setUserName] = useState("");
     const [teacherID,setteacherID]=useState("");
-    const [image, setImage] = useState(null);
+  
 
    
  
