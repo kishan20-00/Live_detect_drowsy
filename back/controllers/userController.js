@@ -1,22 +1,14 @@
-const userDetails = require("../models/user");
+/*const userDetails = require("../models/user");
 
 //add new Vehicle for system
 exports.addNewUser= async (req, res) => {
  
     //constant variables for the attributes
-    const {
-        UserName,
-        Address ,
-        ContactNo,
-        Password,
-     } = req.body;
+    const {userName,studentID,email,address,country,city,contactNo,images,birthday,password} = req.body;
   
   
           const newUser = new userDetails({
-            UserName,
-        Address ,
-        ContactNo,
-        Password,
+            userName,studentID,email,address,country,city,contactNo,images,birthday,password
         })
     
         newUser.save().then(() => {
@@ -45,18 +37,10 @@ exports.deleteUser = async (req, res) => {
  exports.updateUser= async (req, res) => { 
     //fetch id from url
     let id = req.params.id;
-    const {
-        UserName,
-        Address ,
-        ContactNo,
-        Password,
-           } = req.body;
+    const {userName,studentID,email,address,country,city,contactNo,images,birthday,password } = req.body;
   
     const updateUser = {
-        UserName,
-        Address ,
-        ContactNo,
-        Password,
+      userName,studentID,email,address,country,city,contactNo,images,birthday,password
         }
   
   
@@ -93,7 +77,7 @@ exports.viewUser= async (req, res) => {
   }
 
 exports.viewOneUserName = async (req, res) => {
-    const userName = req.params.UserName; // Assuming the name is passed as a parameter
+    const userName = req.params.userName; // Assuming the name is passed as a parameter
 
     try {
         const user = await userDetails.findOne({ name: userName });
@@ -109,12 +93,12 @@ exports.viewOneUserName = async (req, res) => {
 
 exports.login = async (req, res) => {
   const { 
-    UserName, 
-    Password } = req.body;
+    userName, 
+    password } = req.body;
 
   try {
       // Find the user by username
-      const user = await userDetails.findOne({ UserName: UserName });
+      const user = await userDetails.findOne({ UserName: userName });
 
       // If user not found, return error
       if (!user) {
@@ -122,7 +106,7 @@ exports.login = async (req, res) => {
       }
 
       // Check if the password matches
-      if (user.Password !== Password) {
+      if (user.password !== password) {
           return res.status(401).json({ error: "Incorrect password" });
       }
 
@@ -133,3 +117,5 @@ exports.login = async (req, res) => {
       res.status(500).json({ error: error.message });
   }
 };
+
+*/

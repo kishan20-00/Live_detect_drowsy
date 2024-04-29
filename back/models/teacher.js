@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const bcrypt = require('bcrypt'); // Import bcrypt module
 
-const StudentSchema = new Schema({
+const TeacherSchema = new Schema({
 
 userName :{
     type: String,
@@ -10,10 +10,10 @@ userName :{
 
 userType :{
     type: String,
-    default: "student",
+    default: "teacher",
 },
 
-studentID:{
+teacherID:{
     type: String,
 },
 
@@ -21,28 +21,8 @@ email :{
     type: String,
 },
 
-address :{
-    type: String,
-},
-
-country : {
-    type: String,
-},
-
-city: {
-    type: String,
-},
-
-contactNo :{
-    type: String,
-},
-
 images :{
     type: String,
-},
-
-birthday :{
-    type: Date,
 },
 
 password :{
@@ -53,7 +33,7 @@ password :{
 
 
 // Hash the password before saving it to the database
-StudentSchema.pre('save', function(next) {
+TeacherSchema.pre('save', function(next) {
     const user = this;
     if (!user.isModified('password')) return next();
     
@@ -69,7 +49,7 @@ StudentSchema.pre('save', function(next) {
 });
 
 // Method to compare passwords
-StudentSchema.methods.comparePassword = function(candidatePassword) {
+TeacherSchema.methods.comparePassword = function(candidatePassword) {
     return new Promise((resolve, reject) => {
         bcrypt.compare(candidatePassword, this.password, (err, isMatch) => {
             if (err) return reject(err);
@@ -78,6 +58,6 @@ StudentSchema.methods.comparePassword = function(candidatePassword) {
     });
 };
 
-const Student = mongoose.model("Students", StudentSchema);
-module.exports = Student;
+const Teacher = mongoose.model("Teachers", TeacherSchema);
+module.exports = Teacher;
 
