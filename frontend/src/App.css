@@ -1,0 +1,315 @@
+
+
+.image-header{
+  width: 100%;
+  height: 100%;
+}
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background-color: white; 
+  width: 40%;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  height: 1500px;
+}
+
+
+.studentsignup-title{
+  margin-top: 10px;
+  font-size: 30px;
+  font-weight: 70px;
+  margin-left: 15px;
+   margin-bottom: 5px;
+  
+}
+.text-center {
+  text-align: center;
+}
+
+.forgot-password-link {
+  text-align: right;
+}
+ 
+.login-logo {
+  width: 100px;
+  height: 100px;
+}
+
+.login-title {
+  margin-top: 50px;
+  font-size: 50px;
+  padding-left: 20px;
+   margin-bottom: 5px; 
+  
+}
+
+.profile-title {
+  margin-top: 50px;
+  font-size: 40px !important;
+   margin-bottom: 5px;
+  
+}
+
+.profile-sub-title {
+  margin-top: 5px;
+  font-size: 30px !important;
+   margin-bottom: 5px; 
+  
+}
+
+
+
+.login-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #007bff;
+  color: #fff;
+  width: 100% !important; 
+}
+
+
+
+.signup-button
+ {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #007bff;
+  color: #fff;
+  width:1000px;
+  margin-left: 200px;
+}
+
+
+.login-button:hover {
+  background-color: #0056b3;
+  color: #fff;
+}
+
+.login-input {
+  height: 50px;
+  font-size: 20px;
+  background-color: #f0f0f0; 
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: none; 
+  padding: 10px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin-left:300px;
+  height: 100vh;
+  margin-left: 100px;
+}
+
+.column {
+  flex: 1;
+  padding: 20px;
+}
+
+.form-container {
+ 
+  padding: 20px;
+ 
+ 
+}
+
+.form-container-profile {
+ 
+  padding: 20px;
+  margin-left:500px;
+  background-color: #f7f5f5;
+  box-sizing: border-box;
+  border-radius: 20px;
+  border-color: #0a101f;
+  width:50%;
+ 
+}
+
+.login-content {
+  width: 100%;
+  max-width: 700px; 
+  padding: 20px;
+  
+ 
+}
+
+.signup-content {
+
+  flex-direction: column;
+  align-items: center;
+  max-width: 700px; 
+  padding: 20px;
+  margin: 0 auto; 
+}
+
+
+
+.left-column {
+  margin-right: 10px;
+}
+
+.right-column {
+  margin-left: 90px;
+  margin-top: 250px;
+  width: 100%;
+}
+
+
+.button-container {
+ 
+  margin-bottom: 20px;
+}
+
+.button-container button {
+  margin: 0 10px;
+}
+
+
+
+.user-button
+ {
+  margin: 0 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  display: inline-block;
+  padding: 10px ;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-color: #77559e;
+  background-color: white;
+  color: black;
+  width:250px;
+}
+
+
+
+.user-button:hover {
+  background-color: #2f4e92;
+  color: #fff;
+}
+
+
+
+.form-container{
+  margin-left: 5px;
+}
+
+
+
+/* Sidebar styles */
+.sidebar {
+  position: relative;
+  background-color: #f0f0f0;
+  width: 200px;
+  height: 100vh; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20px;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 10px;
+}
+.sidebar a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  margin-right: 10px;
+}
+
+/* Main content styles */
+.main-content {
+  margin-left: 220px; /* Adjust margin to accommodate sidebar width */
+  padding: 20px;
+}
+
+
+.carousel-container {
+  display: flex;
+  justify-content: center;
+  margin-left: 220px; 
+
+}
+
+
+
+.logout {
+  position: absolute;
+  bottom: 20px; 
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 40px !important;
+ 
+}
+
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+
+
+
+
+
+
+
+

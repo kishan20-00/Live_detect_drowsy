@@ -1,0 +1,240 @@
+.feedback-page {
+    margin-left: 200px; 
+  }
+  
+  .greeting {
+    
+    margin-top: 50px;
+    margin-left: 40px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .greeting span {
+    margin-right: 20px;
+  }
+  
+  .badge {
+    /* Styles for the badge */
+    background-color: #ffcc00; /* Example background color */
+    color: #fff; /* Example text color */
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 12px;
+  }
+  
+  .message {
+    position: absolute;
+    top: 45px; /* Adjust as needed */
+    margin-left: 40px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  
+  .announcement-container {
+    display: flex;
+    justify-content: center;
+  
+    
+  }
+  
+  .announcement-box {
+    background-color: #d1e3f7; /* Blue color */
+    color: rgb(80, 78, 78);
+   
+    padding: 10px 20px;
+    border-radius: 10px;
+    width:550px;
+  }
+  
+  .announcement-box p {
+    margin: 0; /* Remove default margin */
+  
+  }
+  
+  .custom-textbox {
+    display: flex;
+    border: 1px solid #007bff; /* Blue border */
+    border-radius: 5px; /* Border radius */
+    padding: 10px; /* Padding inside the textbox */
+    outline: none; /* Remove default focus outline */
+    opacity: 0.5; /* Placeholder opacity */
+    
+  }
+  body {
+    position: relative;
+  }
+  
+  .custom-textbox {
+    position: absolute;
+    margin-top: 5px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    border: 1px solid #007bff; /* Blue border */
+    border-radius: 20px; /* Border radius */
+    padding: 10px; /* Padding inside the textbox */
+    outline: none; /* Remove default focus outline */
+    opacity: 0.5; /* Placeholder opacity */
+    width:150px;
+    height:25px;
+  }
+  
+  .event-calendar{
+    position: absolute;
+    margin-top: 200px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    width:37%;
+    height:100%;
+    margin-left: 200px; 
+   
+   
+  }
+
+  .custom-box {
+    position: absolute;
+    margin-top: 70px; /* Adjust as needed */
+    margin-left: 40px; /* Adjust as needed */
+    border: 1px solid #d1e1f1; /* Blue border */
+    border-radius: 20px; /* Border radius */
+    padding: 10px; /* Padding inside the textbox */
+    outline: none; /* Remove default focus outline */
+    opacity: 0.5; /* Placeholder opacity */
+    width: 1500px;
+    height:50px;
+  }
+  
+  
+  .feedback-form{
+    margin-top: 190px;
+    margin-left: 200px;
+    font-size: 20px;
+    padding-left: 20px;
+     margin-bottom: 5px; /* Adjust the value as needed */
+  }
+  
+  .sub-headings-feedback{
+    margin-top: 10px;
+    font-size: 20px;
+    margin-bottom: 5px; /* Adjust the value as needed */
+  }
+  
+  .feedback-dropdown-box1{
+    position: absolute;
+    margin-top: 70px; /* Adjust as needed */
+    left: 30px; /* Adjust as needed */
+    border: 1px solid #a0c9f3; /* Blue border */
+    border-radius: 20px; /* Border radius */
+    padding: 10px; /* Padding inside the textbox */
+    outline: none; /* Remove default focus outline */
+    width:350px;
+    height:50px;
+    color:black;
+    font-size: 18px;
+    margin-left: 200px;
+  }
+  
+  .feedback-dropdown-box2{
+    position: absolute;
+    margin-top: 70px; /* Adjust as needed */
+    left: 650px; /* Adjust as needed */
+    border: 1px solid #a0c9f3; /* Blue border */
+    border-radius: 20px; /* Border radius */
+    padding: 10px; /* Padding inside the textbox */
+    outline: none; /* Remove default focus outline */
+    width:200px;
+    height:50px;
+    color:black;
+    font-size: 18px;
+   
+  }
+  
+  .feedback-dropdown-box3{
+    position: absolute;
+    margin-top: 150px; /* Adjust as needed */
+    left: 30px; /* Adjust as needed */
+    border: 1px solid #a0c9f3; /* Blue border */
+    border-radius: 20px; /* Border radius */
+    padding: 10px; /* Padding inside the textbox */
+    outline: none; /* Remove default focus outline */
+    width:300px;
+    height:50px;
+    color:black;
+    font-size: 18px;
+    margin-left: 200px;
+  
+  }
+  
+  
+  /* Feedback Form styles */
+  .feedback-for-eductor-form{
+    margin-left: 20px ;
+  }
+  
+  .form {
+    max-width: 800px;
+    margin-top: 300px;
+    padding: 15px;
+   
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  
+  
+  .question {
+    margin-bottom: 15px;
+  }
+  
+  .question label {
+    display: block;
+    font-weight: bold;
+  }
+  
+  .rating input[type="radio"] {
+    display: none;
+  }
+  
+  .rating label {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-image: url('https://uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-icon.png'); /* Replace with your star icon */
+    background-size: cover;
+  }
+  
+  .rating input[type="radio"]:checked + label {
+    background-image: url('https://cdn3.iconfinder.com/data/icons/sympletts-free-sampler/128/star-512.png'); /* Replace with your filled star icon */
+  }
+  
+  .comment label {
+    display: block;
+    font-weight: bold;
+  }
+  
+  .comment textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+  }
+  
+  button[type="submit"] {
+    display: block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  

@@ -1,0 +1,253 @@
+ .performace-view{
+    margin-left: 200px; 
+ }
+
+
+.tab-container {
+    margin: auto;
+  
+}
+
+
+.circle-text1{
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.circle-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  max-width: 100%;
+  margin: auto;
+}
+
+.circle-container {
+  display: flex;
+  align-items: center;
+  
+}
+
+.circle-container h5 {
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+.circle-container p {
+  margin: 0;
+}
+
+
+.circle-container img {
+   width: 80px;
+}
+
+
+.mcq-container {
+    border: 1px solid #eee;
+    padding: 10px;
+    border-radius: 20px;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 50px;
+    max-width: 1700px; /* Set the maximum width here */
+}
+
+.mine {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+
+  .attendance-perecentage{
+    margin-left: 120px;
+  }
+
+  .mine2 {
+  
+    margin-left: 160px;
+    top: 120px;
+  }
+  .graph-container {
+    position: relative;
+    margin-top: 1200px;
+  }
+
+  
+.graph-container text {
+    font-size: 20px;
+  }
+  
+  .graph-container polygon {
+    position: absolute;
+    top: 30%;
+    left: 0;
+  }
+
+.assessments-container {
+    margin-left: 150px;
+}
+
+
+.mcq-container-title {
+    margin-left: 70px;
+    font-size: 20px;
+    margin-bottom: -10px;
+}
+
+.mcq-container-title-line{
+    display: flex;
+    margin-left: 200px;
+    font-size: 20px;
+    margin-bottom: -10px;
+
+}
+
+
+
+  .tab-container .assessments-container {
+    display: flex;
+  }
+  
+  .tab-container .assessments-container .icon-col {
+    flex: 1;
+  }
+  
+  .tab-container .assessments-container .icon-col h6:first-of-type {
+    opacity: 0;
+  }
+  
+  .tab-container .assessments-container .assessment-col {
+    flex: 3;
+  }
+  
+  .tab-container .assessments-container .percentage-col {
+    flex: 2;
+  }
+
+
+
+  .grid-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    max-height: 30px;
+    
+  
+  }
+  
+  .grid-wrapper div {
+   
+    border-color: blue;
+    border-radius: 40px;
+    min-height: 300px;
+    margin-left: 20px;
+    margin-right:20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  
+  }
+
+.grid-card-1{
+    background: rgb(191, 188, 248);
+}
+
+
+
+
+.grid-card-3{
+    background: rgb(244, 248, 180);
+}
+
+
+.grid-card-4{
+    background: rgb(185, 241, 202);
+}
+
+
+.circle-graph-container {
+    display: flex; /* Change to flex to display children in a row */
+    justify-content: space-between; /* Adjust spacing between the circles */
+    margin-top: 50px;
+  }
+  
+  .circle-graph {
+    position: relative;
+    width: 45%; /* Adjust width of each circle */
+  }
+  
+  .circle-graph svg {
+    width: 100%; /* Ensure SVG fills the container */
+    height: auto; /* Allow SVG to adjust height automatically */
+  }
+  
+  
+  
+  .circle-graph {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+  
+    
+   
+
+      
+  circle {
+    fill: none;
+    stroke-width: 10;
+  }
+  
+  .circle-graph circle:nth-child(2) {
+  
+    stroke-dasharray: calc(2 * 40 * 3.14);
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+  }
+  
+  .percentage {
+    position: absolute;
+    top: 65%;
+    left: 48%;
+    transform: translate(-65%, -48%);
+    font-size: 16px;
+   
+  }
+
+
+  .custom-box {
+    position: absolute;
+    margin-top: 70px; /* Adjust as needed */
+    margin-left: 40px; /* Adjust as needed */
+    border: 1px solid #d1e1f1; /* Blue border */
+    border-radius: 20px; /* Border radius */
+    padding: 10px; /* Padding inside the textbox */
+    outline: none; /* Remove default focus outline */
+    opacity: 0.5; /* Placeholder opacity */
+    width: 1500px;
+    height:50px;
+  }
+  
+  .custom-box-title{
+    color: rgb(4, 4, 46);
+  }
+
+  .card-container-performace {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card-performance {
+    background-color: white; 
+    width: 1500px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 170px;
+    margin-left: 50px;
+    height:250px;
+   
+  }
+  

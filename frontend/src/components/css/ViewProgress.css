@@ -1,0 +1,61 @@
+/* Style for the search bar box */
+input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  
+  /* Style for the search button */
+  button {
+    padding: 8px 16px;
+    background-color: #007bff; /* Change button background color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* Hover effect for the search button */
+  button:hover {
+    background-color: #0056b3; /* Change button background color on hover */
+  }
+  
+  /* Style for table headers */
+  th {
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  /* Style for table data cells */
+  td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  /* Style for delete button */
+  button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Style for Font Awesome delete icon */
+  .fa-trash {
+    color: red; /* Change color of the delete icon */
+  }
+  
+  .physical-standards-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 80px;
+    
+}
+
+
+.achievement-view{
+    margin-left: 300px;
+    margin-right: 100px;
+}
+
