@@ -1,30 +1,3 @@
-/*const router = require("express").Router();
-
-const {addNewUser,viewUser,viewOneUser, updateUser,deleteUser, login} = require ('../controllers/userController.js')
-
-//add new Hotel 
-router.post("/add", addNewUser);
-
-//view all Hotels
-router.get("/", viewUser);
-
-//update existing Hotel
- router.put("/update/:id",updateUser);
-
-//delete existing one
- router.delete("/delete/:id",deleteUser);
-
-//view one Hotel
-router.get("/get/:id", viewOneUser);
-
-//Login
-router.post("/log", login);
-
-module.exports = router;
-
-*/
-
-
 const router = require("express").Router();
 let User = require("../models/user");
 
@@ -156,54 +129,6 @@ router.route("/get/:email").get((req, res) => {
 });
 
 
-
-
-
-
-/*
-
-router.route("/log").post((req, res) => {
-    
-
-    const email = req.body.email;
-    const password = req.body.password;
-
-
-  
-
-    if (!email || !password) {
-        res.status(422).json({ error: "Please add Email or password" })
-    }
-
- User.findOne({email:email})
-  .then(savedUser =>{
-      if(!savedUser){
-         return  res.status(422).json({error:"Invalid Email or Password"})
-
-      }
-
-      User.findOne({password:password})
-      .then(savedUser =>{
-        if(savedUser){
-         
-
-             res.json(User);
-            
-            
-          }
-          else{
-              return res.status(422).json({error:"Invalid Service Id or Password"})
-          }
-      })
-    .catch(err=>{
-        console.log(err)
-    })
-
-  })
-})
-
-
-*/
 router.route("/log").post(async (req, res) => {
     const { email, password } = req.body;
 
