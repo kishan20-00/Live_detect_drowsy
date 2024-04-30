@@ -31,6 +31,10 @@ app.use("/user", userRouter);
 const teacherRouter = require("./routes/teacherRoutes.js");
 app.use("/teacher", teacherRouter);
 
+//Marks router
+const marksRouter = require("./routes/marksRoutes.js");
+app.use("/marks", marksRouter);
+
 const port = process.env.PORT || 5000;
 
 app.listen(port, (error) => {
