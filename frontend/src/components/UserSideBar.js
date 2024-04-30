@@ -42,7 +42,7 @@ function UserSideBar() {
                     </Link>
                 </li><br/><br/>
                 <li>
-                    <Link to={`/progress`}>
+                    <Link to={`/progress/${email}`}>
                         <FaChartBar className="icon" />
                         My Progress Card
                     </Link>

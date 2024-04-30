@@ -307,6 +307,24 @@ tr:hover {
 
 
 
+.splash-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ensure the splash screen covers the entire viewport height */
+}
+
+.splash-screen {
+  text-align: center;
+}
+
+.splash-screen img {
+  width: 100%; /* Adjust the width of the logo as needed */
+  height: auto; /* Maintain the aspect ratio of the logo */
+  margin-bottom: 20px; /* Add some spacing between the logo and the title */
+}
+
+
 
 
 

@@ -14,6 +14,12 @@ import MyProfile from './components/MyProfile';
 import TeacherRegistration from './components/TeacherRegistration';
 import Video from './components/Video';
 import TeacherDashboard from './components/TeacherDashboard';
+import SplashScreen from './components/SplashScreen';
+import StudentsList from './components/StudentsList';
+import AllNotification from './components/AllNotifications';
+import AddMarks from './components/AddMarks';
+import AllResults from './components/AllResults';
+
 function App() {
   return (
 
@@ -22,6 +28,8 @@ function App() {
         {/* Use Routes instead of directly using Route */}
         <Routes>
           {/* Specify your routes inside Routes */}
+          
+          <Route path="/" element={<SplashScreen />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<StudentRegistration />} />
           <Route path="/feedback" element={<Feedback/>}/>
@@ -29,12 +37,16 @@ function App() {
           <Route path="/sidebar" element={<UserSideBar/>}/>
           <Route path="/userDashboard" element={<UserDashboard/>}/>
           <Route path="/header" element={<Header/>}/>
-          <Route path="/progress" element={<ViewProgress/>}/>
+          <Route path="/progress/:email" element={<ViewProgress/>}/>
           <Route path="/profile/:email" element={<MyProfile/>}/>
           <Route path="/teacher" element={<TeacherRegistration/>}/>
           <Route path="/video" element={<Video/>}/>
           <Route path="/teacherDashboard" element={<TeacherDashboard/>}/>
-          
+          <Route path="/all-students" element={<StudentsList/>}/>
+          <Route path="/notifications" element={<AllNotification/>}/>
+          <Route path="/add-marks" element={<AddMarks/>}/>
+          <Route path="/all-results" element={<AllResults/>}/>
+      
           
           
 

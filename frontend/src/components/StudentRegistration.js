@@ -10,7 +10,16 @@ export default function StudentRegistration() {
     const [userName, setUserName] = useState("");
     const [studentID, setStudentID] = useState("");
     const [birthday, setBirthday] = useState("");
+    const [images, setImages] = useState([]);
 
+    const handleFileChange = (event) => {
+        const selectedImages = event.target.files;
+        // Convert FileList to an array
+        const imagesArray = Array.from(selectedImages);
+        setImages(imagesArray);
+    };
+
+  
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -72,6 +81,55 @@ export default function StudentRegistration() {
                                 <Form.Label>Date of Birth</Form.Label>
                                 <Form.Control type="date" value={birthday} onChange={(e) => setBirthday(e.target.value)} className="login-input" />
                             </Form.Group>
+                            
+                            <Form.Group controlId="formBasicImage">
+    <div>
+        {/* Input for file selection */}
+        <input
+            type="file"
+            accept="image/*"
+            style={{ display: "none" }}
+            id="uploadImageInput"
+            onChange={handleFileChange}
+            multiple // Allow multiple file selection
+        />
+        <label htmlFor="uploadImageInput">
+            <Button
+                variant="outlined"
+                sx={{
+                    color: "black",
+                    borderRadius: "30px",
+                    borderColor: "black",
+                    "&:hover": {
+                        color: "black",
+                        borderRadius: "30px",
+                        borderColor: "black",
+                    },
+                    marginTop: "16px",
+                    marginBottom: "16px",
+                }}
+                as="span" // Ensure the button behaves like a span
+            >
+                Upload images
+            </Button>
+        </label>
+        {/* Display selected images */}
+        <div>
+            {images.map((image, index) => (
+                <img
+                    key={index}
+                    src={URL.createObjectURL(image)}
+                    alt={`Uploaded ${index}`}
+                    style={{
+                        maxWidth: "100px",
+                        maxHeight: "100px",
+                        margin: "5px",
+                    }}
+                />
+            ))}
+        </div>
+    </div>
+</Form.Group>
                             <Button variant="primary" size="lg" type="submit" className="login-button">Register</Button><br/>
                             <div style={{ textAlign: 'center' }}>
                                 <Link to="/login" className="hover:text-[#2347C5] hover:underline">

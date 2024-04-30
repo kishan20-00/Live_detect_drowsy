@@ -17,39 +17,34 @@ function TeacherSidebar() {
         <div className="sidebar">
             <ul>
             <li><br/><br/><br/>
-                    <Link to="/userDashboard">
+                    <Link to="/teacherDashboard">
                         <FaHome className="icon"  style={{ fontSize: '-20px',}} />
                         Dashboard
                     </Link>
                 </li>
                 <li><br/><br/>
-                    <Link to={`/profile`}>
+                    <Link to={`/all-students`}>
                         <FaUser className="icon" />
                        Students Information
                     </Link>
                 </li><br/><br/>
                 <li>
-                    <Link to={`/video`}>
+                    <Link to={`/notifications`}>
                         <FaUser className="icon" />
-                       My ClassRoom
+                       My ClassRoom Notifications
                     </Link>
                 </li><br/><br/>
                 <li>
-                    <Link to={`/performance`}>
+                    <Link to={`/add-marks`}>
                         <FaMedal className="icon" />
-                        Students Performance
+                        Add Students Marks
                     </Link>
                 </li><br/><br/>
+                
                 <li>
-                    <Link to={`/progress`}>
-                        <FaChartBar className="icon" />
-                        Students Progress
-                    </Link>
-                </li><br/><br/>
-                <li>
-                    <Link to={`/feedback`}>
+                    <Link to={`/all-results`}>
                         <FaComment className="icon" />
-                       Feedbacks
+                       View All Students Results
                     </Link>
                 </li><br/><br/>
                 <li>

@@ -1,117 +1,77 @@
 import React, { useState, useEffect } from 'react';
-//import axios from 'axios'; // Import axios for making HTTP requests
-import '../components/css/ViewProgress.css'
+import axios from 'axios';
+import '../components/css/ViewProgress.css';
 import UserSideBar from './UserSideBar';
 import { useParams } from "react-router";
 import { FaSearch } from 'react-icons/fa';
 import Header from './header';
-import axios from 'axios';
 
 function ViewProgress() {
-   const [email, setEmail] = useState([]);
-   const [name, setName] = useState([]);
-   const [attendance, setAttendance] = useState([]);
-   const [progress, setProgress] = useState([]);
-   const [users, setUsers] = useState([]);
+   const [marks, setMarks] = useState([]);
    const [search, setSearch] = useState("");
-   const{id} = useParams();
-
-
-
-  useEffect(() =>{
-    function getUsers(){
-        axios.get("http://localhost:5000/user/").then((res) =>{
-            setUsers(res.data);
-        }).catch((err) => {
-            alert(err.message);
-        })
- }
- getUsers();
-   },[])
-
-
-
-
-  return (
+   const { email } = useParams(); // Get the logged-in user's email from the URL params
    
-   
+   useEffect(() => {
+      async function getProgress() {
+         try {
+            const response = await axios.get(`http://localhost:5000/marks/get/${email}`);
+            setMarks(response.data.marks);
 
-    <div> 
-        <UserSideBar />
-        <Header/>
-
-     <div className="achievement-view"><br/><br/>
-     <center> <h1>Student Progress</h1> </center>
+         } catch (error) {
+            console.error("Error fetching progress: ", error);
            
-    <br/>
-        
-    <table className="achievement-table">
-   <thead>
-    <h6>Teacher Name:</h6>
-    <h6>Teacher ID:</h6><br/>
-    <div style={{marginLeft:"10px"}}  ><input type="text" placeholder = "Search Email " onChange ={(e) =>{
-     setSearch(e.target.value);
-     }} /><FaSearch/></div>
-     
-    <tr>
-           
-            <th>email</th>
-            <th>name</th>
-            <th>attendance</th>
-            <th>progress</th>
-           
-          
-      
-    </tr>
-  </thead>
-  <tbody>
-  <td>gauthami@gmail.com</td>
-      <td>Gauthami</td>
-      <td>75%</td>
-      <td>84%</td>
+         }
+      }
+      getProgress();
+   }, [email]); // Fetch progress data when the email changes (component mounts or email changes)
 
- {/* {users.filter(Users => {
-                          if(search == ""){
-                              return Users
-                          }
-                          else if(Users.email.toLowerCase().includes(search.toLowerCase())){
-                              return Users
-                          }
-                      }).
-    
-    
-  map((Users) => {
-
-    return(
-      <tr key={Users._id}>
-      <td>gauthami@gmail.com</td>
-      <td>Gauthami</td>
-      <td>75%</td>
-      <td>84%</td>
-      
-     
-     
-    </tr>
-    );
-    })} 
-  */}
-   
-    </tbody>
-</table>
-</div>
-
-
- </div>
-    
-  )
-
+   return (
+      <div> 
+         <UserSideBar />
+         <Header />
+         <div className="achievement-view">
+            <center><h1>Student Progress</h1></center>
+            <br />
+            <input type="text" placeholder="Search" onChange={(e) => setSearch(e.target.value)} />
+            {marks.length === 0 ? (
+               <p>No records found</p>
+            ) : (
+               <table className="achievement-table">
+                  <thead>
+                     <tr>
+                        <th>Student ID</th>
+                        <th>Email</th>
+                        <th>Exam Type</th>
+                        <th>Score</th>
+                        <th>Date</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     {marks
+                        .filter((mark) => {
+                           const searchTerm = search.toLowerCase();
+                           if (searchTerm === "") {
+                              return true;
+                           } else if (mark.examType && mark.examType.toLowerCase().includes(searchTerm)) {
+                              return true;
+                           }
+                           return false;
+                        })
+                        .map((mark) => (
+                           <tr key={mark._id}>
+                              <td>{mark.studentID}</td>
+                              <td>{mark.email}</td>
+                              <td>{mark.examType}</td>
+                              <td>{mark.score}</td>
+                              <td>{mark.date}</td>
+                           </tr>
+                        ))}
+                  </tbody>
+               </table>
+            )}
+         </div>
+      </div>
+   );
 }
-  
+
 export default ViewProgress;
-
-
-
-
-
-
-
