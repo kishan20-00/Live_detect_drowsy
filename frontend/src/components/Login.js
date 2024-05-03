@@ -5,59 +5,61 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-    // Creating states
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [userType, setUserType] = useState("");
-    const [imageSrc, setImageSrc] = useState(null); // State to hold the image captured from the camera
-    const navigate = useNavigate();
-   
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-        //Validation
-        if (!email || !password || !userType) {
-            alert("Please fill in all fields");
-            return;
-        }
-
-        const newUser = {
-            email,
-            password,
-            userType
-        };
-
-        axios.post("http://localhost:5000/user/log", newUser)
-            .then(() => {
-                alert("Sign in successfully");
-                localStorage.setItem('email', email); // Store email in local storage
-
-                // Redirect based on user type
-                if (userType === "student") {
-                    navigate('/userDashboard');
-                } else if (userType === "teacher") {
-                    navigate('/teacherDashboard');
-                }
-            })
-            .catch((err) => {
-                alert("Invalid Email or Password");
-            });
-    };
-
-    // Function to handle capturing image from camera
-    const handleCaptureImage = async () => {
-        try {
-            const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-            const mediaStreamTrack = stream.getVideoTracks()[0];
-            const imageCapture = new ImageCapture(mediaStreamTrack);
-            const blob = await imageCapture.takePhoto();
-            const imageUrl = URL.createObjectURL(blob);
-            setImageSrc(imageUrl);
-        } catch (error) {
-            console.error("Error capturing image:", error);
-        }
-    };
-
+     // Creating states
+     const [email, setEmail] = useState("");
+     const [password, setPassword] = useState("");
+     const [imageSrc, setImageSrc] = useState(null); // State to hold the image captured from the camera
+     const navigate = useNavigate();
+    
+     const handleSubmit = async (e) => {
+         e.preventDefault();
+ 
+         // Validation
+         if (!email || !password ) {
+             alert("Please fill in all fields");
+             return;
+         }
+ 
+         const data = { email, password };
+ 
+         try {
+             const studentResponse = await axios.post("http://localhost:5000/user/log", data);
+             handleLoginResponse(studentResponse);
+         } catch (error) {
+             try {
+                 const teacherResponse = await axios.post("http://localhost:5000/teacher/log", data);
+                 handleLoginResponse(teacherResponse);
+             } catch (error) {
+                 alert("Invalid Email or Password");
+             }
+         }
+     };
+ 
+     const handleLoginResponse = (response) => {
+         const { userType } = response.data;
+         alert("Sign in successfully");
+         localStorage.setItem('email', email); // Store email in local storage
+         if (userType === "student") {
+             navigate('/userDashboard'); // Redirect student to student dashboard
+         } else if (userType === "teacher") {
+             navigate('/teacherDashboard'); // Redirect teacher to teacher dashboard
+         }
+     };
+ 
+     // Function to handle capturing image from camera
+     const handleCaptureImage = async () => {
+         try {
+             const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+             const mediaStreamTrack = stream.getVideoTracks()[0];
+             const imageCapture = new ImageCapture(mediaStreamTrack);
+             const blob = await imageCapture.takePhoto();
+             const imageUrl = URL.createObjectURL(blob);
+             setImageSrc(imageUrl);
+         } catch (error) {
+             console.error("Error capturing image:", error);
+         }
+     };
+ 
     return (
         <div className="container">
             <div className="column left-column">
@@ -74,14 +76,6 @@ const Login = () => {
                                 <Form.Group controlId="formBasicPassword">
                                     <Form.Label>Password</Form.Label><br/><br/>
                                     <Form.Control type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} className="login-input" />
-                                </Form.Group>
-                                <Form.Group controlId="formBasicUser">
-                                    <Form.Label>User Type</Form.Label><br/><br/>
-                                    <Form.Select value={userType} onChange={(e) => setUserType(e.target.value)} className="login-input">
-                                        <option value="">Select User Type</option>
-                                        <option value="student">Student</option>
-                                        <option value="teacher">Teacher</option>
-                                    </Form.Select>
                                 </Form.Group>
                                 <Button variant="primary" onClick={handleCaptureImage}>Capture Image</Button> {/* Button to capture image */}
                                 {imageSrc && <img src={imageSrc} alt="Captured" />} {/* Display captured image */}
